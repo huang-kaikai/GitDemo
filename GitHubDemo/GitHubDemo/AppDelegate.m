@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "RootViewController.h"
+#import "TableViewController.h"
 
 @interface AppDelegate ()
 
@@ -22,7 +23,8 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.window.backgroundColor = [UIColor whiteColor];
     RootViewController *root = [[RootViewController alloc] init];
-    root.view.backgroundColor = [UIColor grayColor];
+    //root.view.backgroundColor = [UIColor grayColor];
+    //TableViewController *root = [[TableViewController alloc] init];
     self.window.rootViewController = root;
     [self.window makeKeyAndVisible];
     

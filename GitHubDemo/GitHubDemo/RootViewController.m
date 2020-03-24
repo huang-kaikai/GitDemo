@@ -7,8 +7,12 @@
 //
 
 #import "RootViewController.h"
+#import "TableViewController.h"
+#import "SecondViewController.h"
 
-@interface RootViewController ()
+@interface RootViewController () <UITabBarControllerDelegate>
+
+@property (strong,nonatomic)UITabBarController *tabBarController;
 
 @end
 
@@ -17,6 +21,23 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    UITabBarController *tabBarController = [[UITabBarController alloc] init];
+    tabBarController.delegate = self;
+    
+    TableViewController *firstVC = [[TableViewController alloc] init];
+    UINavigationController *firstNav = [[UINavigationController alloc] initWithRootViewController:firstVC];
+    firstNav.tabBarItem = [[UITabBarItem alloc] initWithTabBarSystemItem:UITabBarSystemItemBookmarks tag:0];
+    
+    SecondViewController *secondVC = [[SecondViewController alloc] init];
+    UINavigationController *secondNav = [[UINavigationController alloc] initWithRootViewController:secondVC];
+    secondNav.tabBarItem = [[UITabBarItem alloc] initWithTabBarSystemItem:UITabBarSystemItemMore tag:1];
+    
+    tabBarController.viewControllers = [NSArray arrayWithObjects:firstNav, secondNav, nil];
+    self.tabBarController = tabBarController;
+    [self.view addSubview:tabBarController.view];
+    
+    
 }
 
 /*
