@@ -1,5 +1,5 @@
 //
-//  AppDelegate.h
+//  RootViewController.h
 //  GitHubDemo
 //
 //  Created by ryan.huang on 2020/3/24.
@@ -8,9 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface AppDelegate : UIResponder <UIApplicationDelegate>
+NS_ASSUME_NONNULL_BEGIN
 
-@property (strong, nonatomic) UIWindow * window;
+@interface RootViewController : UIViewController
 
 @end
 
+NS_ASSUME_NONNULL_END
